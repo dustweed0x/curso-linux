@@ -75,5 +75,84 @@ des puede decir que e instalado
 # yun history undo 3
 des borra ese pquete con sus dependencias, es el rollback que vende redhat
 
+CONFIGURANDO REPOSITORIOS
+---------------------------------
+
+# yum repolist 
+des muestra repositorios que tengo
+
+# yum clean all
+des borra la cache de yum que es como a vinculado los erepositorios
+
+En la ruta /etc/yum.repos.d/
+Aqui se encuentran los archivos .repo que tiene los repositorios
+
+En archivo /etc/yum.conf
+opciones globales del yum
+
+Una forma
+si te dan una url asi puedes agregar un repositorio
+# yum-config-manager add-repo="http://classroom.examble/content/rhel7.0/x86_64/rht/"
+
+Otra forma:
+# vi /etc/yum.repo.d/errata.repo
+
+[errata-kernel]
+name=Repo Kernel Nuevo
+baseurl=http://classroom.examble/content/rhel7.0/x86_64/errata/
+enabled=1
+gpgcheck=1 (se puede deshabilitar si se confia totalmente en el repositorio, si esta habilitado no permitira la instalacion de los paquedes que jo estan firmados
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+# yum list kernel
+muestra el kernel instalado y te muestra los que otros qye hay disponibles
+
+# yum install kernel
+instala el nuevo kernel, es lo mismo que haber lanzado # yum update kernel, para que SO tome el nuevo kernel hay que reiniciar.
+si se desa iniciar con el anterior, se debe interrumpir el boteo y seleccionar el anterior.
+
+
+COMANDO RPM
+--------------------------------------
+
+opcion
+q query
+a all
+f archivo
+i informacion del paquete
+l todos los archivos que instala el paquete
+c todos los archivos de configuracion que utiliza el paquete
+--scripts para ver los postscripts que corre el paquete en su instalacion
+
+p package que aun no estan instalados, se puede usar con las opcones anteriopres 
+
+# rpm -qa
+muestra los rpm instalados en so SO
+
+# rpm -qaf /etc/ssh/sshd_config
+muestra que rpm trabaja con ese archivo
+
+# rpm -qi httpd
+# rpm -qpi httpd
+
+# rpm -ql httpd
+# rpm -qpl httpd
+
+# rpm -qc httpd
+# rpm -qpc httpd
+
+# rpm -qc httpd
+# rpm -qpc httpd
+
+# rpm -q --scripts httpd
+
+INSTALAR RPM
+--------------------------
+
+desde el yum
+yum intall /etc/wonder-wigets-1.0-4.x86_64.rpm
+
+desde el rpm
+rpm -ivh wonder-wigets-1.0-4.x86_64.rpm
 
 
