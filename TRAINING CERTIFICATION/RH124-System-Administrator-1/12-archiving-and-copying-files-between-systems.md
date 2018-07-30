@@ -63,4 +63,66 @@ Yo tambien podria hacer el mismo procdimiento para poder compartir y verificar q
 
 # md5sum etc.tar 
 
+COAMDO SCP
+-----------------------------------------------
+
+# scp ARCHIVO01/DIRECTORIO01-ORIGEN USUARIO@IPDESTINO:RUTA-DESTINO
+
+# scp USUARIO@IPDESTINO:RUTA-ORIGEN ARCHIVO01/DIRECTORIO01-DESTINO
+
+
+opciones
+r recursivo
+p para que mantenga los permisos
+
+
+COMANDO rsync
+----------------------------------------------------------------
+
+PAra copiar archivos incrementales
+
+opcion
+a srchive kmode de archivo
+r syncronizar recursivamente en el arboll de directorio
+p preservar los permisos
+t preservar timestamp
+g preservar grupos
+o preservar owver
+n hace una prueba de envio/ cuando se le quita el n ya hace el envio
+
+--remove-source-files para que sincronize solo archivos y no directorios
+
+# rsync -avr file* root@desktop1:/tmp/files
+
+# rsync -avrn --remove-source-files dir1 dir2 root@desktop1:/tmp/files
+# rsync -avr --remove-source-files dir1 dir2 root@desktop1:/tmp/files
+
+
+COMANDO SFTP
+-----------------------------------------------------------------------
+
+# sftp root@desktop1
+sftp> mkdir test
+sftp> put hosts (tienes que estar parado en la ruta origen donde estan los archivos a transferir)
+sftp> get /etc/hosts (te trae el archivo remoto a la ruta donde estas parado)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
