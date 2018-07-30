@@ -123,7 +123,7 @@ i informacion del paquete
 l todos los archivos que instala el paquete
 c todos los archivos de configuracion que utiliza el paquete
 --scripts para ver los postscripts que corre el paquete en su instalacion
-
+-q --changelog: list change information for the package
 p package que aun no estan instalados, se puede usar con las opcones anteriopres 
 
 # rpm -qa
