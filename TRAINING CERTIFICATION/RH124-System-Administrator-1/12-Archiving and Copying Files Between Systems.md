@@ -23,11 +23,11 @@ f para archivo o directorio
 # tar -cvf etc.tar /etc
 des esto es un primer nivel de comprencion
 
-# tar -czvf etc.tar /etc
+# tar -czvf etc.tar.gz /etc
 des esto es un segundo nivel de comprencion, se le agrega la z
-# tar -jzvf etc.tar /etc
+# tar -jzvf etc.tar.bz2 /etc
 des esto es un segundo nivel de comprencion, se le agrega la j
-# tar -Jzvf etc.tar /etc
+# tar -Jzvf etc.tar.xz /etc
 des esto es un segundo nivel de comprencion, se le agrega la J
 
 Todo lo que sea z va a generat un *.tar.gz o *tgz
@@ -37,8 +37,26 @@ Todo lo que sea J va a generar un *.tar.xz
 El que mas comprime es el xz y es el nativo por linux
 
 opcion
+t para listar el contenido de un archivo
+f endica que es un archivo
+
+# tar -tf etc.tar
+
+opcion
 x extrae un archivo
 
 
+
+
+COMANDO MD%
+--------------------------------------------
+Sirve poara validar que el archivo esta correcto y el archivo no esta corrupto
+Al bajarme el tar ellos deben de decirme como calcuraron la integridad de este archivo
+Si usaron md5sum o sha512sum y el numero que genero
+Yo uso ese mismo comando en mi maquina y veo si me genera el mismo numero
+
+Yo tambien podria hacer el mismo procdimiento para poder compartir y verificar que sea integro.
+
+# md5sum etc.tar 
 
 
