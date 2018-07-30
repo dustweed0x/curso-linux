@@ -45,8 +45,12 @@ f endica que es un archivo
 opcion
 x extrae un archivo
 
+# tar -xzvf etc.tar.gz
+# tar -xjvf etc.tar.bz2
+# tar -xJvf etc.tar.xz
 
-
+opcion
+p Preserve the permissions of files and directories when extracting an archive, without subtracting the umask.
 
 COMANDO MD%
 --------------------------------------------
